@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="sheparei_BMICalculatorApp.MainPage"
+             Title="BMI Calculator">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Title -->
+            <Label Text="BMI Calculator"
+                   FontSize="32"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold" />
+
+            <!-- Gender Selection -->
+            <Label Text="Select Gender" 
+                   FontSize="18" 
+                   HorizontalOptions="Center" />
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="40">
+                <VerticalStackLayout>
+                    <ImageButton x:Name="MaleButton"
+                                 Source="male.png"
+                                 WidthRequest="100"
+                                 HeightRequest="100"
+                                 Clicked="OnGenderSelected"
+                                 Aspect="AspectFit"
+                                 BackgroundColor="Transparent" />
+                    <Label Text="Male" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name="FemaleButton"
+                                 Source="female.png"
+                                 WidthRequest="100"
+                                 HeightRequest="100"
+                                 Clicked="OnGenderSelected"
+                                 Aspect="AspectFit"
+                                 BackgroundColor="Transparent" />
+                    <Label Text="Female" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <!-- Height -->
+            <Label Text="Height (inches)" FontSize="16" />
+            <Slider x:Name="HeightSlider" Minimum="0" Maximum="100" Value="50" ValueChanged="OnSliderValueChanged" />
+            <Label x:Name="HeightValue" Text="50 inches" HorizontalOptions="Center" />
+
+            <!-- Weight -->
+            <Label Text="Weight (lbs)" FontSize="16" />
+            <Slider x:Name="WeightSlider" Minimum="0" Maximum="300" Value="90" ValueChanged="OnSliderValueChanged" />
+            <Label x:Name="WeightValue" Text="90 lbs" HorizontalOptions="Center" />
+
+            <!-- Calculate Button -->
+            <Button Text="Calculate your BMI"
+                    Clicked="OnCalculateClicked"
+                    HorizontalOptions="Fill"
+                    FontSize="18"
+                    HeightRequest="60" />
+
+            <!-- Results -->
+            <Frame x:Name="ResultsFrame" IsVisible="False" Padding="20" BorderColor="Gray" BackgroundColor="WhiteSmoke">
+                <VerticalStackLayout Spacing="12">
+                    <Label x:Name="BmiLabel" FontSize="26" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label x:Name="StatusLabel" FontSize="20" HorizontalOptions="Center" />
+                    <Label x:Name="RecommendationsLabel" FontSize="16" />
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
