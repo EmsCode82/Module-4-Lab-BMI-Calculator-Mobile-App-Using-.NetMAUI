@@ -60,14 +60,30 @@
                     HeightRequest="60" />
 
             <!-- Results -->
-            <Frame x:Name="ResultsFrame" IsVisible="False" Padding="20" BorderColor="Gray" BackgroundColor="WhiteSmoke">
-                <VerticalStackLayout Spacing="12">
-                    <Label x:Name="BmiLabel" FontSize="26" FontAttributes="Bold" HorizontalOptions="Center" />
-                    <Label x:Name="StatusLabel" FontSize="20" HorizontalOptions="Center" />
-                    <Label x:Name="RecommendationsLabel" FontSize="16" />
+            <Frame x:Name="ResultsFrame" 
+                   IsVisible="False" 
+                   Padding="20" 
+                   BorderColor="#555555" 
+                   BackgroundColor="#2A2A2A"
+                   CornerRadius="8">
+
+                <VerticalStackLayout Padding="20" Spacing="20" BackgroundColor="#1E1E1E">
+                            <Label x:Name="BmiLabel" 
+                           FontSize="26" 
+                           FontAttributes="Bold" 
+                           HorizontalOptions="Center"
+                           TextColor="White" />
+
+                            <Label x:Name="StatusLabel" 
+                           FontSize="20" 
+                           HorizontalOptions="Center"
+                           TextColor="#00FFAA" />
+
+                        <Label x:Name="RecommendationsLabel" 
+                               FontSize="15" 
+                               TextColor="#DDDDDD" />
                 </VerticalStackLayout>
             </Frame>
-
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
